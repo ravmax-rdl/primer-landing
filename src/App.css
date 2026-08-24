@@ -1553,6 +1553,20 @@
 }
 
 
+.footer-signature {
+  justify-self: start;
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 520;
+  letter-spacing: 0.08em;
+  transition: color 350ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.footer-signature:hover {
+  color: var(--recall);
+}
+
 .site-footer {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
