@@ -6,6 +6,7 @@ import {
   useScroll,
   useTransform,
 } from 'motion/react'
+import { BlockPiMark } from './BlockPiMark'
 import { methodStages } from './content'
 
 const nodePositions = [
@@ -125,7 +126,7 @@ export function EvidenceLoop() {
                 ))}
                 <g className="pi-core">
                   <circle cx="300" cy="260" r="54" />
-                  <text x="300" y="277" textAnchor="middle">π</text>
+                  <BlockPiMark centerX={300} centerY={260} size={58} />
                   <path d="M300 192V212M300 308V328M232 260H252M348 260H368" />
                 </g>
               </motion.svg>

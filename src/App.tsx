@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import { BlockPiMark } from './BlockPiMark'
 import { DemoCarousel } from './DemoCarousel'
 import { EvidenceLoop } from './EvidenceLoop'
 import { commands, deterministicRows, requirements } from './content'
@@ -146,7 +147,7 @@ function App() {
               ))}
               <g className="hero-pi">
                 <circle cx="310" cy="255" r="65" />
-                <text x="310" y="278" textAnchor="middle">π</text>
+                <BlockPiMark centerX={310} centerY={255} size={70} />
               </g>
             </svg>
             <span className="hero-scope-label label-tl">SOURCE / 01</span>
