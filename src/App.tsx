@@ -17,8 +17,9 @@ function Wordmark() {
   return (
     <a className="wordmark" href="#top" aria-label="Primer home">
       <span className="wordmark-mark" aria-hidden="true">
-        <i />
-        <strong>π</strong>
+        <svg viewBox="0 0 64 64" focusable="false">
+          <BlockPiMark centerX={32} centerY={32} size={54} />
+        </svg>
       </span>
       <span>Primer</span>
     </a>
