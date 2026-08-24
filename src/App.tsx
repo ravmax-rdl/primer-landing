@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import { Analytics } from '@vercel/analytics/react'
 import { BlockPiMark } from './BlockPiMark'
 import { DemoCarousel } from './DemoCarousel'
 import { EvidenceLoop } from './EvidenceLoop'
@@ -375,6 +376,7 @@ function App() {
           <a href={`${githubUrl}/blob/main/LICENSE-CODE`} target="_blank" rel="noreferrer">MIT</a>
         </div>
       </footer>
+      <Analytics />
     </main>
   )
 }
