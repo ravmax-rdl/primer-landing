@@ -4,17 +4,31 @@ type BlockPiMarkProps = {
   size: number
 }
 
-const piPixels = [
-  [0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0],
-  [1, 1], [7, 1],
-  [1, 2], [7, 2],
-  [1, 3], [7, 3],
-  [1, 4], [7, 4],
-  [1, 5], [7, 5],
-  [1, 6], [7, 6],
-  [0, 7], [1, 7], [7, 7], [8, 7],
-  [0, 8], [8, 8],
-] as const
+type PixelRectangle = {
+  x: number
+  y: number
+  width: number
+  height: number
+  opacity?: number
+}
+
+const piRectangles: readonly PixelRectangle[] = [
+  { x: 8, y: 10, width: 48, height: 4 },
+  { x: 8, y: 14, width: 4, height: 4 },
+  { x: 52, y: 14, width: 4, height: 4 },
+  { x: 8, y: 18, width: 10, height: 4 },
+  { x: 22, y: 18, width: 20, height: 4 },
+  { x: 46, y: 18, width: 10, height: 4 },
+  { x: 46, y: 22, width: 4, height: 22 },
+  { x: 46, y: 44, width: 4, height: 1, opacity: 73 / 255 },
+  { x: 50, y: 44, width: 8, height: 4 },
+  { x: 14, y: 22, width: 4, height: 30 },
+  { x: 22, y: 22, width: 4, height: 30 },
+  { x: 38, y: 22, width: 4, height: 30 },
+  { x: 54, y: 48, width: 4, height: 4 },
+  { x: 14, y: 52, width: 12, height: 4 },
+  { x: 42, y: 52, width: 16, height: 4 },
+]
 
 export function BlockPiMark({ centerX, centerY, size }: BlockPiMarkProps) {
   const scale = size / 64
@@ -26,13 +40,14 @@ export function BlockPiMark({ centerX, centerY, size }: BlockPiMarkProps) {
       shapeRendering="crispEdges"
       aria-hidden="true"
     >
-      {piPixels.map(([column, row]) => (
+      {piRectangles.map(({ x, y, width, height, opacity = 1 }) => (
         <rect
-          key={`${column}-${row}`}
-          x={1 + column * 7}
-          y={1 + row * 7}
-          width="6"
-          height="6"
+          key={`${x}-${y}`}
+          x={x}
+          y={y}
+          width={width}
+          height={height}
+          fillOpacity={opacity}
         />
       ))}
     </g>
