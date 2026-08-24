@@ -365,7 +365,7 @@ function App() {
       </section>
 
       <footer className="site-footer page-shell">
-        <Wordmark />
+        <a className="footer-signature" href="https://github.com/ravmax-rdl" target="_blank" rel="noreferrer">ravmax</a>
         <p>Probe. Teach. Assess. Record. Continue.</p>
         <div className="footer-links">
           <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>
