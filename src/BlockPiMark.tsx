@@ -4,6 +4,18 @@ type BlockPiMarkProps = {
   size: number
 }
 
+const piPixels = [
+  [0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0],
+  [1, 1], [7, 1],
+  [1, 2], [7, 2],
+  [1, 3], [7, 3],
+  [1, 4], [7, 4],
+  [1, 5], [7, 5],
+  [1, 6], [7, 6],
+  [0, 7], [1, 7], [7, 7], [8, 7],
+  [0, 8], [8, 8],
+] as const
+
 export function BlockPiMark({ centerX, centerY, size }: BlockPiMarkProps) {
   const scale = size / 64
 
@@ -11,9 +23,18 @@ export function BlockPiMark({ centerX, centerY, size }: BlockPiMarkProps) {
     <g
       className="block-pi-mark"
       transform={`translate(${centerX - size / 2} ${centerY - size / 2}) scale(${scale})`}
+      shapeRendering="crispEdges"
       aria-hidden="true"
     >
-      <path d="M6 7H58V18H50V43C50 50 52 53 58 53V63C45 63 39 57 39 44V18H25V38C25 52 18 60 6 63V52C12 50 14 46 14 38V18H6V7Z" />
+      {piPixels.map(([column, row]) => (
+        <rect
+          key={`${column}-${row}`}
+          x={1 + column * 7}
+          y={1 + row * 7}
+          width="6"
+          height="6"
+        />
+      ))}
     </g>
   )
 }

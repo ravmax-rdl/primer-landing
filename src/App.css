@@ -395,7 +395,7 @@
   stroke-width: 1;
 }
 
-.block-pi-mark path {
+.block-pi-mark rect {
   fill: var(--paper);
   shape-rendering: crispEdges;
 }
