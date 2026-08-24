@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import { DemoCarousel } from './DemoCarousel'
 import { EvidenceLoop } from './EvidenceLoop'
 import { commands, deterministicRows, requirements } from './content'
 import './App.css'
@@ -329,19 +330,8 @@ function App() {
             Open demo vault <span><Arrow /></span>
           </motion.a>
         </Reveal>
-        <Reveal className="demo-image-frame" delay={0.12}>
-          <div className="demo-image-bar">
-            <span>LIVE STUDY SESSION</span>
-            <span>PROBE / LOCK-IN</span>
-          </div>
-          <div className="demo-image-wrap">
-            <img
-              src="https://raw.githubusercontent.com/ravmax-rdl/Primer/main/assets/agent-workflow.jpg"
-              alt="Pi teaching a proof concept and asking a lock-in question during a Primer study session"
-              loading="lazy"
-            />
-            <span className="demo-image-index">FIG. 01 / AGENT WORKFLOW</span>
-          </div>
+        <Reveal className="demo-carousel-reveal" delay={0.12}>
+          <DemoCarousel />
         </Reveal>
       </section>
 

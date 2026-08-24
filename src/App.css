@@ -1351,6 +1351,10 @@
 .primary-cta-amber:hover {
   background: var(--paper);
 }
+.demo-carousel-reveal {
+  min-width: 0;
+}
+
 
 .demo-image-frame {
   border: 1px solid var(--line-strong);
@@ -1370,6 +1374,47 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+.demo-carousel-nav {
+  display: flex;
+  align-self: stretch;
+  margin-right: -14px;
+}
+
+.demo-carousel-nav button {
+  width: 42px;
+  padding: 0;
+  border-inline-start: 1px solid var(--line);
+  color: var(--ash-dark);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  transition:
+    color 350ms cubic-bezier(0.32, 0.72, 0, 1),
+    background 350ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.demo-carousel-nav button:hover,
+.demo-carousel-nav button.is-active {
+  color: var(--reactor);
+  background: var(--recall);
+}
+
+.demo-carousel-viewport {
+  overflow: hidden;
+}
+
+.demo-carousel-track {
+  display: flex;
+  will-change: transform;
+}
+
+.demo-carousel-track figure {
+  min-width: 0;
+  flex: 0 0 100%;
+  margin: 0;
+}
+
 
 .demo-image-wrap {
   position: relative;
