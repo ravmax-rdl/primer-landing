@@ -395,11 +395,9 @@
   stroke-width: 1;
 }
 
-.hero-pi text {
+.block-pi-mark path {
   fill: var(--paper);
-  font-family: var(--font-mono);
-  font-size: 58px;
-  font-weight: 260;
+  shape-rendering: crispEdges;
 }
 
 .hero-scope-label {
@@ -759,14 +757,8 @@
   stroke-width: 1;
 }
 
-.pi-core text {
-  fill: var(--paper);
-  font-family: var(--font-mono);
-  font-size: 52px;
-  font-weight: 250;
-}
 
-.pi-core path {
+.pi-core > path {
   fill: none;
   stroke: var(--evidence);
   stroke-width: 1;
